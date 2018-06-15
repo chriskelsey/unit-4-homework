@@ -21,10 +21,12 @@ $(document).ready(function() {
 		var gemNum = parseInt($(this).attr('id'))
 		if (guessTotal + gemNum === answer) {
 			wins++;
+			$('.announcement').text('You Win!');
 			randNumGen();
 			$('p.win').text('Wins: ' + wins);
 		} else if (guessTotal + gemNum > answer){
 			loss++;
+			$('.announcement').text('You Lose!');
 			randNumGen();
 			$('p.loss').text('Losses: ' + loss);
 		} else {
